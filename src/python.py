@@ -1,0 +1,138 @@
+#Kevin Augustine: Lab 01, tetris
+import turtle
+def board():
+    #This function draws the tetris board
+    turtle.forward(100)
+    turtle.left(90)
+    turtle.forward(200)
+    turtle.left(90)
+    turtle.forward(100)
+    turtle.left(90)
+    turtle.forward(200)
+    turtle.left(90)
+
+def block():
+    #This function draws one singular block.
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(10)
+    turtle.left(90)
+    
+
+def line():
+    #This function draws the tetris piece that is four blocks in a row.
+    turtle.fillcolor('green')
+    turtle.begin_fill() 
+    turtle.forward(10)
+    turtle.lt(90)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.bk(30)
+    turtle.rt(90)
+    turtle.end_fill()
+
+def s_block():
+    #This function draws the yellow s block piece with 2 blocks on the bottom and top in the shape of an s.
+    turtle.fillcolor('yellow')
+    turtle.begin_fill()
+    block()
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    turtle.left(90)
+    turtle.forward(10)
+    block()
+    turtle.right(90)
+    block()
+    turtle.forward(10)
+    turtle.end_fill()
+
+def t_block():
+    #This function draws the t block piece with three blocks on the bottom and one on top.
+    turtle.fillcolor('blue')
+    turtle.begin_fill()
+    block()
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.left(90)
+    turtle.forward(10)
+    block()
+    turtle.end_fill()
+    turtle.back(10)
+    turtle.right(90)
+    turtle.forward(10)
+    turtle.end_fill()
+
+def brown_l():
+    #This function draws one of the l blocks. This block has the singular block to the left of the line.
+    turtle.fillcolor('brown')
+    turtle.begin_fill()
+    block()
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    turtle.lt(90)
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.end_fill()
+    turtle.back(20)
+    turtle.right(90)
+def orange_l():
+    #This function draws one of the l blocks. This block has the singular block to the right of the line.
+    turtle.fillcolor('orange')
+    turtle.begin_fill()
+    block()
+    turtle.forward(10)
+    block()
+    turtle.lt(90)
+    turtle.forward(10)
+    block()
+    turtle.forward(10)
+    block()
+    turtle.end_fill()
+    turtle.back(20)
+    turtle.right(90)
+    turtle.forward(10)
+def main():
+    #This function draws the tetris board and all 8 pieces.
+    turtle.speed(0)
+    board()
+    line()
+    t_block()
+    brown_l()
+    s_block()
+    turtle.fd(10)
+    turtle.lt(90)
+    brown_l()
+    t_block()
+    turtle.up()
+    turtle.back(30)
+    turtle.left(90)
+    turtle.fd(10)
+    turtle.rt(90)
+    turtle.down()
+    line()
+    turtle.up()
+    turtle.back(30)
+    turtle.left(90)
+    turtle.forward(40)
+    turtle.right(90)
+    turtle.down()
+    s_block()
+    turtle.done()
+    
+
+main()
